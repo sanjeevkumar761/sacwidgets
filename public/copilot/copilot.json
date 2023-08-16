@@ -7,7 +7,7 @@
     "vendor": "Sanjeev Kumar",
     "eula": "",
     "license": "Apache20",
-    "icon": "https://sac-widgets-app.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/images/icon.png",
+    "icon": "https://sac-openai-app.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/images/icon.png",
     "webcomponents": [
         {
             "kind": "main",
@@ -24,52 +24,44 @@
             "ignoreIntegrity": true
         }
     ],
-    "properties": {
-        "apiKey": {
-            "description": "OpenAI API Key",
-            "type": "string",
-            "default": ""
-        },
-        "max_tokens": {
-            "description": "Token Limit",
-            "type": "integer",
-            "default": 1024
-        }
-    },
-    "methods": {
-        "setApiKey": {
-            "description": "Set OpenAI API key",
-            "parameters": [
-                {
-                    "name": "apiKey",
-                    "type": "string",
-                    "description": "OpenAI API key"
-                }
-            ],
-            "body": "this.apiKey = apiKey;"
-        },
-        "getApiKey": {
-            "returnType": "string",
-            "description": "Get OpenAI API key",
-            "body": "return this.apiKey;"
-        },
-        "setMax_tokens": {
-            "description": "Set Token Limit",
-            "parameters": [
-                {
-                    "name": "max_tokens",
-                    "type": "integer",
-                    "description": "Token Limit"
-                }
-            ],
-            "body": "this.max_tokens = max_tokens;"
-        },
-        "getMax_tokens": {
-            "returnType": "integer",
-            "description": "Get Token Limit",
-            "body": "return this.max_tokens;"
-        }
-    },
+	"properties": {
+		"color": {
+			"type": "string",
+			"description": "Background color",
+			"default": "red"
+		},
+		"opacity": {
+			"type": "number",
+			"description": "Opacity",
+			"default": 1
+		},
+		"width": {
+			"type": "integer",
+			"default": 100
+		},
+		"height": {
+			"type": "integer",
+			"default": 100
+		}
+	},
+	"methods": {
+		"setColor": {
+			"description": "Sets the background color.",
+			"parameters": [
+				{
+					"name": "newColor",
+					"type": "string",
+					"description": "The new background color"
+				}
+			],
+			"body": "this.color = newColor;"
+		},
+		"getColor": {
+			"returnType": "string",
+			"description": "Returns the background color.",
+			"body": "return this.color;"
+		}
+	},
     "events": {
         "onClick": {
             "description": "Click by user."
