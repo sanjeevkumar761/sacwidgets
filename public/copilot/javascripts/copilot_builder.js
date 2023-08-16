@@ -135,7 +135,7 @@
        }
  
     }
-    customElements.define("com-sanjeevkumar-sap-openaiwidget-builder",
+    customElements.define("com-sanjeevkumar-sap-copilot-builder",
         OpenAIBuilderPanel
     );
  })();
