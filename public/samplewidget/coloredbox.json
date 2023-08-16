@@ -12,7 +12,7 @@
 		{
 			"kind": "main",
 			"tag": "com-sap-sample-coloredbox",
-			"url": "./coloredbox.js",
+			"url": "./javascripts/coloredbox.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
