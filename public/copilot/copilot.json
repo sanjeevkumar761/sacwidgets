@@ -1,0 +1,78 @@
+{
+    "id": "com.sanjeevkumar.sap.copilot",
+    "version": "1.0.3",
+    "name": "Copilot Widget",
+    "description": "SAC Copilot",
+    "newInstancePrefix": "Copilot",
+    "vendor": "Sanjeev Kumar",
+    "eula": "",
+    "license": "Apache20",
+    "icon": "https://sac-widgets-app.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/images/icon.png",
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "com-sanjeevkumar-sap-copilot",
+            "url": "https://sac-widgets-app.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/javascripts/copilot.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        },
+        {
+            "kind": "builder",
+            "tag": "com-sanjeevkumar-sap-copilot-builder",
+            "url": "https://sac-widgets-app.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/javascripts/copilot_builder.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+        "apiKey": {
+            "description": "OpenAI API Key",
+            "type": "string",
+            "default": ""
+        },
+        "max_tokens": {
+            "description": "Token Limit",
+            "type": "integer",
+            "default": 1024
+        }
+    },
+    "methods": {
+        "setApiKey": {
+            "description": "Set OpenAI API key",
+            "parameters": [
+                {
+                    "name": "apiKey",
+                    "type": "string",
+                    "description": "OpenAI API key"
+                }
+            ],
+            "body": "this.apiKey = apiKey;"
+        },
+        "getApiKey": {
+            "returnType": "string",
+            "description": "Get OpenAI API key",
+            "body": "return this.apiKey;"
+        },
+        "setMax_tokens": {
+            "description": "Set Token Limit",
+            "parameters": [
+                {
+                    "name": "max_tokens",
+                    "type": "integer",
+                    "description": "Token Limit"
+                }
+            ],
+            "body": "this.max_tokens = max_tokens;"
+        },
+        "getMax_tokens": {
+            "returnType": "integer",
+            "description": "Get Token Limit",
+            "body": "return this.max_tokens;"
+        }
+    },
+    "events": {
+        "onClick": {
+            "description": "Click by user."
+        }
+    }
+}
