@@ -85,7 +85,7 @@
         generateButton.addEventListener("click", async () => {
           count++;
           if(count > 1){
-            console.log("more than 1 click");
+            console.log("more than 1 click"); 
           }
           console.log(count);
           console.log("clicked");
