@@ -30,10 +30,10 @@
 			"description": "Background color",
 			"default": "red"
 		},
-		"opacity": {
-			"type": "number",
-			"description": "Opacity",
-			"default": 1
+		"newApiKey": {
+			"type": "string",
+			"description": "API Key",
+			"default": ""
 		},
 		"width": {
 			"type": "integer",
@@ -45,22 +45,22 @@
 		}
 	},
 	"methods": {
-		"setColor": {
-			"description": "Sets the background color.",
-			"parameters": [
-				{
-					"name": "newColor",
-					"type": "string",
-					"description": "The new background color"
-				}
-			],
-			"body": "this.color = newColor;"
-		},
-		"getColor": {
-			"returnType": "string",
-			"description": "Returns the background color.",
-			"body": "return this.color;"
-		}
+        "setApiKey": {
+            "description": "Set OpenAI API key",
+            "parameters": [
+                {
+                    "name": "apiKey",
+                    "type": "string",
+                    "description": "OpenAI API key"
+                }
+            ],
+            "body": "this.apiKey = apiKey;"
+        },
+        "getApiKey": {
+            "returnType": "string",
+            "description": "Get OpenAI API key",
+            "body": "return this.apiKey;"
+        }
 	},
     "events": {
         "onClick": {

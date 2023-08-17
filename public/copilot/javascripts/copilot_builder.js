@@ -109,18 +109,18 @@
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
-							opacity: this.opacity
+							apiKey: this.apiKey
 						}
 					}
 			}));
 		}
 
-		set opacity(newOpacity) {
-			this._shadowRoot.getElementById("builder_opacity").value = newOpacity;
+		set apiKey(newApiKey) {
+			this._shadowRoot.getElementById("builder_apiKey").value = newApiKey;
 		}
 
-		get opacity() {
-			return this._shadowRoot.getElementById("builder_opacity").value;
+		get apiKey() {
+			return this._shadowRoot.getElementById("builder_apiKey").value;
 		}
 	}
 
