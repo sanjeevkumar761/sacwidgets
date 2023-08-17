@@ -1,2 +1,2 @@
-# sacwidgets
-Custom widgets for SAP Cloud Analytics
+# Planung
+Copilot for SAP Cloud Analytics.
