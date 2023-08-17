@@ -50,11 +50,11 @@
         </style>
        <div>
     <center>
-    <img src="https://1000logos.net/wp-content/uploads/2023/02/ChatGPT-Emblem.png" width="200"/>
-    <h1>ChatGPT</h1></center>
+    <img src="https://sac-openai-app-v2.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/images/icon.png" width="200"/>
+    <!--<h1>Planning Copilot</h1></center>-->
       <div class="input-container">
-        <input type="text" id="prompt-input" placeholder="Ask anything">
-        <button id="generate-button">Submit</button>
+        <input type="text" id="prompt-input" placeholder="How can I help you?">
+        <button id="generate-button">Run</button>
       </div>
       <textarea id="generated-text" rows="10" cols="50" readonly></ textarea>
     </div>
@@ -88,41 +88,52 @@
           count++;
           if(count > 1){
             console.log("more than 1 click"); 
+          }else{
+            console.log(this._props);
+            console.log(apiKey);
+            const promptInput = this.shadowRoot.getElementById("prompt-input");
+            const generatedText = this.shadowRoot.getElementById("generated-text");
+            generatedText.value = "Getting results...";
+            const prompt = promptInput.value;
+            const response = await fetch("https://api.openai.com/v1/chat/completions", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + apiKey
+              },
+              body: JSON.stringify({
+                "model": "gpt-3.5-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are a planning and analytics expert for large enterprises who run SAP."
+                  },
+                  {
+                    "role": "user",
+                    "content": prompt
+                  }
+                ],
+                //"prompt": prompt,
+                //"max_tokens": parseInt(max_tokens),
+                "max_tokens": 1024,
+                //"n": 1,
+                "temperature": 0.5
+              })
+            });
+            if (response.status === 200) {
+              const {
+                choices
+              } = await response.json();
+              const generatedTextValue = choices[0].message.content;
+              generatedText.value = generatedTextValue.replace(/^\n+/, '');
+            } else {
+              const error = await response.json();
+              alert("OpenAI Response: " + error.error.message);
+              generatedText.value = "";
+            }
           }
           console.log(count);
           console.log("clicked");
-          console.log(this._props);
-          console.log(apiKey);
-          const promptInput = this.shadowRoot.getElementById("prompt-input");
-          const generatedText = this.shadowRoot.getElementById("generated-text");
-          generatedText.value = "Getting results...";
-          const prompt = promptInput.value;
-          const response = await fetch("https://api.openai.com/v1/completions", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": "Bearer " + apiKey
-            },
-            body: JSON.stringify({
-              "model": "text-davinci-002",
-              "prompt": prompt,
-              "max_tokens": parseInt(max_tokens),
-              "n": 1,
-              "temperature": 0.5
-            })
-          });
-  
-          if (response.status === 200) {
-            const {
-              choices
-            } = await response.json();
-            const generatedTextValue = choices[0].text;
-            generatedText.value = generatedTextValue.replace(/^\n+/, '');
-          } else {
-            const error = await response.json();
-            alert("OpenAI Response: " + error.error.message);
-            generatedText.value = "";
-          }
         });
       }
       onCustomWidgetBeforeUpdate(changedProperties) {
