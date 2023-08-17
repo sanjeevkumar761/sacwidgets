@@ -116,6 +116,7 @@
 		}
 
 		set apiKey(newApiKey) {
+			console.log("set API key method triggered")
 			this._shadowRoot.getElementById("builder_apiKey").value = newApiKey;
 		}
 

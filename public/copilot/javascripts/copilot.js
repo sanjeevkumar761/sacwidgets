@@ -82,6 +82,8 @@
         } = this._props || 1024;
         const generateButton = this.shadowRoot.getElementById("generate-button");
         generateButton.addEventListener("click", async () => {
+          console.log(this._props);
+          console.log(apiKey);
           const promptInput = this.shadowRoot.getElementById("prompt-input");
           const generatedText = this.shadowRoot.getElementById("generated-text");
           generatedText.value = "Getting results...";
