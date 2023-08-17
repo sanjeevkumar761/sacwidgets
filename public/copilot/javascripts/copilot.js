@@ -81,7 +81,14 @@
           max_tokens
         } = this._props || 1024;
         const generateButton = this.shadowRoot.getElementById("generate-button");
+        var count = 0;
         generateButton.addEventListener("click", async () => {
+          count++;
+          if(count > 1){
+            console.log("more than 1 click");
+          }
+          console.log(count);
+          console.log("clicked");
           console.log(this._props);
           console.log(apiKey);
           const promptInput = this.shadowRoot.getElementById("prompt-input");
