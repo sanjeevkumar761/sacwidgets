@@ -30,7 +30,7 @@
 			"description": "Background color",
 			"default": "red"
 		},
-		"newApiKey": {
+		"apiKey": {
 			"type": "string",
 			"description": "API Key",
 			"default": ""
@@ -54,7 +54,7 @@
                     "description": "OpenAI API key"
                 }
             ],
-            "body": "this.apiKey = apiKey;"
+            "body": "this.apiKey = newApiKey;"
         },
         "getApiKey": {
             "returnType": "string",
