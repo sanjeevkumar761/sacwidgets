@@ -69,6 +69,7 @@
         this._props = {};
       }
       async connectedCallback() {
+        console.log("In connectedCallback");
         this.initMain();
       }
       async initMain() {
@@ -82,6 +83,7 @@
         } = this._props || 1024;
         const generateButton = this.shadowRoot.getElementById("generate-button");
         var count = 0;
+        console.log("before click");
         generateButton.addEventListener("click", async () => {
           count++;
           if(count > 1){

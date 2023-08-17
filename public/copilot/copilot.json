@@ -7,19 +7,19 @@
     "vendor": "Sanjeev Kumar",
     "eula": "",
     "license": "Apache20",
-    "icon": "https://sac-openai-app.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/images/icon.png",
+    "icon": "https://sac-openai-app-v2.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/images/icon.png",
     "webcomponents": [
         {
             "kind": "main",
             "tag": "com-sanjeevkumar-sap-copilot",
-            "url": "https://sac-openai-app.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/javascripts/copilot.js",
+            "url": "https://sac-openai-app-v2.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/javascripts/copilot.js",
             "integrity": "",
             "ignoreIntegrity": true
         },
         {
             "kind": "builder",
             "tag": "com-sanjeevkumar-sap-copilot-builder",
-            "url": "https://sac-openai-app.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/javascripts/copilot_builder.js",
+            "url": "https://sac-openai-app-v2.delightfulsand-a68e9d1e.northeurope.azurecontainerapps.io/copilot/javascripts/copilot_builder.js",
             "integrity": "",
             "ignoreIntegrity": true
         }
