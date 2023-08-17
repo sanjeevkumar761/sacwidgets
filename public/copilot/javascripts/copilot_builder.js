@@ -21,7 +21,7 @@
 		</style>
 	`;
 
-	class ColoredBoxBuilderPanel extends HTMLElement {
+	class CopilotBuilderPanel extends HTMLElement {
 		constructor() {
 			super();
 			this._shadowRoot = this.attachShadow({mode: "open"});
@@ -49,5 +49,5 @@
 		}
 	}
 
-	customElements.define("com-sanjeevkumar-sap-copilot-builder", ColoredBoxBuilderPanel);
+	customElements.define("com-sanjeevkumar-sap-copilot-builder", CopilotBuilderPanel);
 })();
