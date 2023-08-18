@@ -9,7 +9,7 @@ az extension add --source https://workerappscliextension.blob.core.windows.net/a
 
 export RESOURCE_GROUP="name of resource group"  
 export LOCATION="Azure region"  
-export LOG_ANALYTICS_WORKSPACE="name of Azure Log Analytics Workspace"
+export LOG_ANALYTICS_WORKSPACE="name of Azure Log Analytics Workspace"  
 export CONTAINERAPPS_ENVIRONMENT="name of container app environment" 
 
 LOG_ANALYTICS_WORKSPACE_CLIENT_ID=`az monitor log-analytics workspace show --query customerId -g $RESOURCE_GROUP -n $LOG_ANALYTICS_WORKSPACE --out tsv`  
